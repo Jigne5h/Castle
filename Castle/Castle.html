@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <script src="./js/angular.js"></script>
+    <script src="./js/index.js"></script>
+    <script src="./js/castleController.js"></script>
+    <script src="./js/jquery-2.2.4.min.js"></script>
+    <script src="./js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/style.css">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Aequilibrium | The Castle Company</title>
+
+</head>
+
+<body ng-app="mainApp" class="container-fluid" ng-controller="castleCtrl">
+    <div class="col-sm-12 text-center">
+        <h1>Aequilibrium | The Castle Company</h1>
+        <hr>
+    </div>
+    <section ng-if="!isCastleBuilt">
+        <div class="col-sm-12 text-center">
+            <h3>First we will build land. Please add land heights from below.</h3>
+            <label for="landHeight">Land Height : </label>
+            <input type="number" name="landHeight" id="landHeight" placeholder="Add Height" ng-model="landHeight">
+            <button class="btn" name="ADD" ng-click="addLandHeight(landHeight)">ADD</button>
+        </div>
+        <div class="col-sm-12 marginTop30 text-center">
+            <h3>Our Stretch of land is : {{land}}</h3>
+            <button class="btn" name="CLEAR" ng-click="clearLand()">CLEAR LAND</button>
+        </div>
+        <div class="col-sm-12 marginTop30 text-center">
+            <button class="btn center" name="BUILD CASTLES" ng-click="buildCastles()">BUILD CASTLES</button>
+        </div>
+    </section>
+    <section ng-if="isCastleBuilt">
+        <div class="col-sm-12 text-center">
+            <h1>Stretch of land</h1>
+            <h1>LAND : {{land}}</h1>
+        </div>
+        <div class="col-sm-12 text-center height500 landScape">
+            <span class="landHeight" style="font-size: {{(l * 20)}}px;" ng-repeat="l in land track by $index">|</span>
+            <span></span>
+        </div>
+        <div class="col-sm-12 text-center">
+            <h1>Number of Castles built : {{numberOfCastlesBuilt}}</h1>
+        </div>
+        <div class="col-sm-12 text-center">
+            Go back to building land :
+            <button class="btn" name="BUILD LAND" ng-click="buildLand(land)">BUILD LAND</button>
+        </div>
+    </section>
+</body>
+
+</html>

@@ -1,0 +1,30 @@
+html,body {
+    height: 100%;
+    font-family: 'Segoe UI light';
+}
+h1,h2,h3,h4,h5,h6{
+    margin-top: 0%;
+}
+.marginTop30 {
+    margin-top: 30px;
+}
+.height500 {
+    max-height: 500px;
+}
+.border1 {
+    border: 1px solid black;
+}
+hr {
+    border: none;
+    height: 2px;
+    color: #333; /* old IE */
+    background-color: #333; /* Modern Browsers */
+}
+.landScape {
+    background-color: #132226;
+    overflow-x: auto;
+}
+.landHeight {
+    color: #be9063;
+    border: 1px #bbb;
+}
